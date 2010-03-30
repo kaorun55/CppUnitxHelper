@@ -1,0 +1,540 @@
+Document file - DO NOT EDIT
+
+<BEGIN> BUILD_RULE_archive
+
+<END>
+
+<BEGIN> BUILD_RULE_cppunit_tests.out
+
+<END>
+
+<BEGIN> BUILD_RULE_objects
+
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_BUILDRULE
+cppunit_tests.out
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_AR
+arsimpc
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_ARCHIVE
+$(PRJ_DIR)/SIMNTgnu/cppunit_tests.a
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_AS
+ccsimpc
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_CC
+ccsimpc
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_CFLAGS
+-U__WINNT \
+	-UWIN32 \
+	-U__WINNT__ \
+	-UWINNT \
+	-U__MINGW32__ \
+	-U_WIN32 \
+	-U__WIN32 \
+	-U__WIN32__ \
+	-U__WIN32 \
+	-mpentium \
+	-ansi \
+	-nostdinc \
+	-g \
+	-nostdlib \
+	-fno-builtin \
+	-fno-defer-pop \
+	-Wall \
+	-DRW_MULTI_THREAD \
+	-D_REENTRANT \
+	-I$(WIND_BASE)/target/h \
+	-DCPU=SIMNT \
+	-I$(PRJ_DIR)/../..
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_CFLAGS_AS
+-mpentium \
+	-ansi \
+	-nostdinc \
+	-g \
+	-nostdlib \
+	-fno-builtin \
+	-fno-defer-pop \
+	-P \
+	-x \
+	assembler-with-cpp \
+	-I. \
+	-I$(WIND_BASE)/target/h \
+	-DCPU=SIMNT
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_CPP
+ccsimpc -E -P -xc
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_LD
+ldsimpc
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_LDDEPS
+
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_LDFLAGS
+--subsystem=windows
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_LD_PARTIAL_FLAGS
+-r
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_NM
+nmsimpc -g
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_OPTION_DEFINE_MACRO
+-D
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_OPTION_INCLUDE_DIR
+-I
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_POST_BUILD_RULE
+
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_PRJ_LIBS
+$(PRJ_DIR)/../cppunit/SIMNTgnu/cppunit.a
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_SIZE
+sizesimpc
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_RO_DEPEND_PATH
+{$(WIND_BASE)/target/h/} \
+	{$(WIND_BASE)/target/src/} \
+	{$(WIND_BASE)/target/config/}
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_TC
+::tc_SIMNTgnu
+<END>
+
+<BEGIN> BUILD__CURRENT
+SIMNTgnu
+<END>
+
+<BEGIN> BUILD__LIST
+SIMNTgnu
+<END>
+
+<BEGIN> CORE_INFO_TYPE
+::prj_vxApp
+<END>
+
+<BEGIN> CORE_INFO_VERSION
+2.0
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/AllTests.cpp_dependDone
+TRUE
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/AllTests.cpp_dependencies
+$(PRJ_DIR)/../../cppunit/cudebug.h \
+	$(PRJ_DIR)/../../cppunit/cuconfig.h \
+	$(PRJ_DIR)/../../cppunit/SimpleAutoPtr.h \
+	$(PRJ_DIR)/../../cppunit/TestUtility.h \
+	$(PRJ_DIR)/../../cppunit/tests/SimpleStringTest.h \
+	$(PRJ_DIR)/../../cppunit/TestCase.h \
+	$(PRJ_DIR)/../../cppunit/Test.h \
+	$(PRJ_DIR)/../../cppunit/SimpleString.h \
+	$(PRJ_DIR)/../../cppunit/tests/SimpleListTest.h \
+	$(PRJ_DIR)/../../cppunit/SimpleList.h \
+	$(PRJ_DIR)/../../cppunit/tests/SimpleAutoPtrTest.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestUtilityTest.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestResultTest.h \
+	$(PRJ_DIR)/../../cppunit/TestResult.h \
+	$(PRJ_DIR)/../../cppunit/TestListener.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestCaseTest.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestCallerTest.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestSuiteTest.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestRegistryTest.h \
+	$(PRJ_DIR)/../../cppunit/TestRegistry.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestDecoratorTest.h \
+	$(PRJ_DIR)/../../cppunit/tests/RepeatedTestTest.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestSetupTest.h \
+	$(PRJ_DIR)/../../cppunit/TestSetup.h \
+	$(PRJ_DIR)/../../cppunit/TestDecorator.h \
+	$(PRJ_DIR)/../../cppunit/tests/CppUnitTest.h \
+	$(PRJ_DIR)/../../cppunit/TestRunner.h
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/AllTests.cpp_objects
+AllTests.o
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/AllTests.cpp_tool
+C/C++ compiler
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/RepeatedTestTest.cpp_dependDone
+TRUE
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/RepeatedTestTest.cpp_dependencies
+$(PRJ_DIR)/../../cppunit/cudebug.h \
+	$(PRJ_DIR)/../../cppunit/cuconfig.h \
+	$(PRJ_DIR)/../../cppunit/SimpleAutoPtr.h \
+	$(PRJ_DIR)/../../cppunit/TestUtility.h \
+	$(PRJ_DIR)/../../cppunit/tests/RepeatedTestTest.h \
+	$(PRJ_DIR)/../../cppunit/TestCase.h \
+	$(PRJ_DIR)/../../cppunit/Test.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestCaseTest.h \
+	$(PRJ_DIR)/../../cppunit/TestSuite.h \
+	$(PRJ_DIR)/../../cppunit/TestResult.h \
+	$(PRJ_DIR)/../../cppunit/RepeatedTest.h \
+	$(PRJ_DIR)/../../cppunit/TestDecorator.h
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/RepeatedTestTest.cpp_objects
+RepeatedTestTest.o
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/RepeatedTestTest.cpp_tool
+C/C++ compiler
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/SimpleAutoPtrTest.cpp_dependDone
+TRUE
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/SimpleAutoPtrTest.cpp_dependencies
+$(PRJ_DIR)/../../cppunit/cudebug.h \
+	$(PRJ_DIR)/../../cppunit/cuconfig.h \
+	$(PRJ_DIR)/../../cppunit/SimpleAutoPtr.h \
+	$(PRJ_DIR)/../../cppunit/TestUtility.h \
+	$(PRJ_DIR)/../../cppunit/tests/SimpleAutoPtrTest.h \
+	$(PRJ_DIR)/../../cppunit/TestCase.h \
+	$(PRJ_DIR)/../../cppunit/Test.h \
+	$(PRJ_DIR)/../../cppunit/TestSuite.h \
+	$(PRJ_DIR)/../../cppunit/TestCaller.h
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/SimpleAutoPtrTest.cpp_objects
+SimpleAutoPtrTest.o
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/SimpleAutoPtrTest.cpp_tool
+C/C++ compiler
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/SimpleListTest.cpp_dependDone
+TRUE
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/SimpleListTest.cpp_dependencies
+$(PRJ_DIR)/../../cppunit/cudebug.h \
+	$(PRJ_DIR)/../../cppunit/cuconfig.h \
+	$(PRJ_DIR)/../../cppunit/SimpleAutoPtr.h \
+	$(PRJ_DIR)/../../cppunit/TestUtility.h \
+	$(PRJ_DIR)/../../cppunit/tests/SimpleListTest.h \
+	$(PRJ_DIR)/../../cppunit/TestCase.h \
+	$(PRJ_DIR)/../../cppunit/Test.h \
+	$(PRJ_DIR)/../../cppunit/SimpleList.h \
+	$(PRJ_DIR)/../../cppunit/TestSuite.h \
+	$(PRJ_DIR)/../../cppunit/TestCaller.h
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/SimpleListTest.cpp_objects
+SimpleListTest.o
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/SimpleListTest.cpp_tool
+C/C++ compiler
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/SimpleStringTest.cpp_dependDone
+TRUE
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/SimpleStringTest.cpp_dependencies
+$(PRJ_DIR)/../../cppunit/cudebug.h \
+	$(PRJ_DIR)/../../cppunit/cuconfig.h \
+	$(PRJ_DIR)/../../cppunit/SimpleAutoPtr.h \
+	$(PRJ_DIR)/../../cppunit/TestUtility.h \
+	$(PRJ_DIR)/../../cppunit/tests/SimpleStringTest.h \
+	$(PRJ_DIR)/../../cppunit/TestCase.h \
+	$(PRJ_DIR)/../../cppunit/Test.h \
+	$(PRJ_DIR)/../../cppunit/SimpleString.h \
+	$(PRJ_DIR)/../../cppunit/TestSuite.h \
+	$(PRJ_DIR)/../../cppunit/TestCaller.h
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/SimpleStringTest.cpp_objects
+SimpleStringTest.o
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/SimpleStringTest.cpp_tool
+C/C++ compiler
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestCallerTest.cpp_dependDone
+TRUE
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestCallerTest.cpp_dependencies
+$(PRJ_DIR)/../../cppunit/cudebug.h \
+	$(PRJ_DIR)/../../cppunit/cuconfig.h \
+	$(PRJ_DIR)/../../cppunit/SimpleAutoPtr.h \
+	$(PRJ_DIR)/../../cppunit/TestUtility.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestCallerTest.h \
+	$(PRJ_DIR)/../../cppunit/TestCase.h \
+	$(PRJ_DIR)/../../cppunit/Test.h \
+	$(PRJ_DIR)/../../cppunit/TestCaller.h \
+	$(PRJ_DIR)/../../cppunit/TestResult.h
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestCallerTest.cpp_objects
+TestCallerTest.o
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestCallerTest.cpp_tool
+C/C++ compiler
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestCaseTest.cpp_dependDone
+TRUE
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestCaseTest.cpp_dependencies
+$(PRJ_DIR)/../../cppunit/cudebug.h \
+	$(PRJ_DIR)/../../cppunit/cuconfig.h \
+	$(PRJ_DIR)/../../cppunit/SimpleAutoPtr.h \
+	$(PRJ_DIR)/../../cppunit/TestUtility.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestCaseTest.h \
+	$(PRJ_DIR)/../../cppunit/TestCase.h \
+	$(PRJ_DIR)/../../cppunit/Test.h \
+	$(PRJ_DIR)/../../cppunit/TestSuite.h \
+	$(PRJ_DIR)/../../cppunit/TestCaller.h \
+	$(PRJ_DIR)/../../cppunit/TestResult.h \
+	$(PRJ_DIR)/../../cppunit/TestFailure.h
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestCaseTest.cpp_objects
+TestCaseTest.o
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestCaseTest.cpp_tool
+C/C++ compiler
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestDecoratorTest.cpp_dependDone
+TRUE
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestDecoratorTest.cpp_dependencies
+$(PRJ_DIR)/../../cppunit/cudebug.h \
+	$(PRJ_DIR)/../../cppunit/cuconfig.h \
+	$(PRJ_DIR)/../../cppunit/SimpleAutoPtr.h \
+	$(PRJ_DIR)/../../cppunit/TestUtility.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestDecoratorTest.h \
+	$(PRJ_DIR)/../../cppunit/TestCase.h \
+	$(PRJ_DIR)/../../cppunit/Test.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestCaseTest.h \
+	$(PRJ_DIR)/../../cppunit/TestSuite.h \
+	$(PRJ_DIR)/../../cppunit/TestResult.h \
+	$(PRJ_DIR)/../../cppunit/TestDecorator.h
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestDecoratorTest.cpp_objects
+TestDecoratorTest.o
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestDecoratorTest.cpp_tool
+C/C++ compiler
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestResultTest.cpp_dependDone
+TRUE
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestResultTest.cpp_dependencies
+$(PRJ_DIR)/../../cppunit/cudebug.h \
+	$(PRJ_DIR)/../../cppunit/cuconfig.h \
+	$(PRJ_DIR)/../../cppunit/SimpleAutoPtr.h \
+	$(PRJ_DIR)/../../cppunit/TestUtility.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestResultTest.h \
+	$(PRJ_DIR)/../../cppunit/TestCase.h \
+	$(PRJ_DIR)/../../cppunit/Test.h \
+	$(PRJ_DIR)/../../cppunit/TestResult.h \
+	$(PRJ_DIR)/../../cppunit/TestListener.h \
+	$(PRJ_DIR)/../../cppunit/TestSuite.h \
+	$(PRJ_DIR)/../../cppunit/TestCaller.h \
+	$(PRJ_DIR)/../../cppunit/TestFailure.h
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestResultTest.cpp_objects
+TestResultTest.o
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestResultTest.cpp_tool
+C/C++ compiler
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestSetupTest.cpp_dependDone
+TRUE
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestSetupTest.cpp_dependencies
+$(PRJ_DIR)/../../cppunit/cudebug.h \
+	$(PRJ_DIR)/../../cppunit/cuconfig.h \
+	$(PRJ_DIR)/../../cppunit/SimpleAutoPtr.h \
+	$(PRJ_DIR)/../../cppunit/TestUtility.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestSetupTest.h \
+	$(PRJ_DIR)/../../cppunit/TestCase.h \
+	$(PRJ_DIR)/../../cppunit/Test.h \
+	$(PRJ_DIR)/../../cppunit/TestSetup.h \
+	$(PRJ_DIR)/../../cppunit/TestDecorator.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestCaseTest.h \
+	$(PRJ_DIR)/../../cppunit/TestSuite.h \
+	$(PRJ_DIR)/../../cppunit/TestCaller.h \
+	$(PRJ_DIR)/../../cppunit/TestResult.h
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestSetupTest.cpp_objects
+TestSetupTest.o
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestSetupTest.cpp_tool
+C/C++ compiler
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestSuiteTest.cpp_dependDone
+TRUE
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestSuiteTest.cpp_dependencies
+$(PRJ_DIR)/../../cppunit/cudebug.h \
+	$(PRJ_DIR)/../../cppunit/cuconfig.h \
+	$(PRJ_DIR)/../../cppunit/SimpleAutoPtr.h \
+	$(PRJ_DIR)/../../cppunit/TestUtility.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestSuiteTest.h \
+	$(PRJ_DIR)/../../cppunit/TestCase.h \
+	$(PRJ_DIR)/../../cppunit/Test.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestCaseTest.h \
+	$(PRJ_DIR)/../../cppunit/TestSuite.h \
+	$(PRJ_DIR)/../../cppunit/TestResult.h
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestSuiteTest.cpp_objects
+TestSuiteTest.o
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestSuiteTest.cpp_tool
+C/C++ compiler
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestUtilityTest.cpp_dependDone
+TRUE
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestUtilityTest.cpp_dependencies
+$(PRJ_DIR)/../../cppunit/cudebug.h \
+	$(PRJ_DIR)/../../cppunit/cuconfig.h \
+	$(PRJ_DIR)/../../cppunit/SimpleAutoPtr.h \
+	$(PRJ_DIR)/../../cppunit/TestUtility.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestUtilityTest.h \
+	$(PRJ_DIR)/../../cppunit/TestCase.h \
+	$(PRJ_DIR)/../../cppunit/Test.h \
+	$(PRJ_DIR)/../../cppunit/TestSuite.h \
+	$(PRJ_DIR)/../../cppunit/TestCaller.h
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestUtilityTest.cpp_objects
+TestUtilityTest.o
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestUtilityTest.cpp_tool
+C/C++ compiler
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/CppUnitTest.cpp_dependDone
+TRUE
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/CppUnitTest.cpp_dependencies
+$(PRJ_DIR)/../../cppunit/cudebug.h \
+	$(PRJ_DIR)/../../cppunit/cuconfig.h \
+	$(PRJ_DIR)/../../cppunit/SimpleAutoPtr.h \
+	$(PRJ_DIR)/../../cppunit/TestUtility.h \
+	$(PRJ_DIR)/../../cppunit/tests/CppUnitTest.h \
+	$(PRJ_DIR)/../../cppunit/TestCase.h \
+	$(PRJ_DIR)/../../cppunit/Test.h \
+	$(PRJ_DIR)/../../cppunit/TestSuite.h \
+	$(PRJ_DIR)/../../cppunit/TestCaller.h
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/CppUnitTest.cpp_objects
+CppUnitTest.o
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/CppUnitTest.cpp_tool
+C/C++ compiler
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestRegistryTest.cpp_dependDone
+TRUE
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestRegistryTest.cpp_dependencies
+$(PRJ_DIR)/../../cppunit/cudebug.h \
+	$(PRJ_DIR)/../../cppunit/cuconfig.h \
+	$(PRJ_DIR)/../../cppunit/SimpleAutoPtr.h \
+	$(PRJ_DIR)/../../cppunit/TestUtility.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestRegistryTest.h \
+	$(PRJ_DIR)/../../cppunit/TestCase.h \
+	$(PRJ_DIR)/../../cppunit/Test.h \
+	$(PRJ_DIR)/../../cppunit/TestRegistry.h \
+	$(PRJ_DIR)/../../cppunit/tests/TestCaseTest.h \
+	$(PRJ_DIR)/../../cppunit/TestSuite.h \
+	$(PRJ_DIR)/../../cppunit/TestCaller.h \
+	$(PRJ_DIR)/../../cppunit/TestResult.h
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestRegistryTest.cpp_objects
+TestRegistryTest.o
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../cppunit/tests/TestRegistryTest.cpp_tool
+C/C++ compiler
+<END>
+
+<BEGIN> PROJECT_FILES
+$(PRJ_DIR)/../../cppunit/tests/AllTests.cpp \
+	$(PRJ_DIR)/../../cppunit/tests/RepeatedTestTest.cpp \
+	$(PRJ_DIR)/../../cppunit/tests/SimpleAutoPtrTest.cpp \
+	$(PRJ_DIR)/../../cppunit/tests/SimpleListTest.cpp \
+	$(PRJ_DIR)/../../cppunit/tests/SimpleStringTest.cpp \
+	$(PRJ_DIR)/../../cppunit/tests/TestCallerTest.cpp \
+	$(PRJ_DIR)/../../cppunit/tests/TestCaseTest.cpp \
+	$(PRJ_DIR)/../../cppunit/tests/TestDecoratorTest.cpp \
+	$(PRJ_DIR)/../../cppunit/tests/TestResultTest.cpp \
+	$(PRJ_DIR)/../../cppunit/tests/TestSetupTest.cpp \
+	$(PRJ_DIR)/../../cppunit/tests/TestSuiteTest.cpp \
+	$(PRJ_DIR)/../../cppunit/tests/TestUtilityTest.cpp \
+	$(PRJ_DIR)/../../cppunit/tests/TestRegistryTest.cpp \
+	$(PRJ_DIR)/../../cppunit/tests/CppUnitTest.cpp
+<END>
+
+<BEGIN> userComments
+<Enter description here>
+<END>
+

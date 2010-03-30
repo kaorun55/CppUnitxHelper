@@ -1,0 +1,267 @@
+
+2002-03-31  Ito Yoshiichi  <Ito.Yoshiichi@nifty.com>
+
+    * TestRunner.(h|cpp): 出力フォーマットを変更。
+      (TestRunner::Utility): 新規追加。
+
+    * samples/SampleTest.cpp: 修正。
+
+2002-03-22  Ito Yoshiichi  <Ito.Yoshiichi@nifty.com>
+
+    * TestCase.(h|cpp) (equals): HUGE_VAL 同士の比較を true に。
+      (notEqualsMessage): double 型の有効表示桁数を DBL_DIG 桁に変更。
+      長い文字列のカットをデフォルトで廃止。
+
+    * cppunit/tests/TestCaseTest.(h|cpp): 修正。
+
+    * samples/SampleTest.cpp: 修正。
+
+2002-02-26  Ito Yoshiichi  <Ito.Yoshiichi@nifty.com>
+
+    * TestRunner.cpp (runTests): 修正。
+    * cu_config.h: 修正。内部クラスの不具合に対応。
+
+    * cppunit/tests/TestCallerTest.cpp: 修正。
+
+2002-02-24  Ito Yoshiichi  <Ito.Yoshiichi@nifty.com>
+
+    * TestCase.h (TEST_CASE): 修正。
+    * TestCaller.h (TEST_CALLER): 修正。
+
+    * TestRunner.cpp (TestRunner::Logger::close): 追加。
+
+    * cuconfig.h: 設定変更。互換性マクロを cu_NO_XXX 形式に統一。
+
+2002-02-17  Ito Yoshiichi  <Ito.Yoshiichi@nifty.com>
+
+    * TestCase.h (TEST_CASE): 修正。
+    * TestCaller.h (TEST_CALLER): 修正。
+
+    * SimpleString.h (reserve): 引数 n のデフォルト値を0に。
+    * SimpleAutoPtr.h (reset): 修正。
+
+    * cuconfig.h: GCC 用の設定変更。
+
+2002-02-14  Ito Yoshiichi  <Ito.Yoshiichi@nifty.com>
+
+    * TestFailure.(h|cpp): 属性 m_what を m_message に変更。
+    * TestListener.h (startTest, endTest): 引数 test の型を
+      const Test& から Test* に変更。
+      (addFailure, addError): 引数 failure、error の型を
+      const TestFailure& から const TestFailure* に変更。
+    * TestResult.(h|cpp) (addFailure, addError): 引数を
+      (Test* test, const cu_String& what, const char* file, long line)
+      から (const TestFailure*) に変更。TestListener と揃えた。
+      (runCount, shouldStop, stop): AutoMutexLock を有効に。
+
+    * TestCase.(h|cpp) (runTest): pure virtual に変更。
+      (TEST_ASSERT_MESSAGE): 新規追加 (暫定仕様)。
+      (addFailure, addError): TestResult の変更に伴い修正。
+      (equals): const char* の引数が NULL(0) の場合に対応。
+      それ以外の引数をとるものは削除。assertEqualsImpl に直接記述。
+      (assertEqualsImpl): 文字列を引数に取るバージョンを追加、修正。
+      (notEqualsMessage): const char* の引数が NULL(0) の場合に対応。
+      const cu_String& を引数にとるバージョンを削除。
+      [CPPUNIT16_COMPATIBLE]: オリジナル CppUnit 1.6.x 互換マクロを追加。
+
+    * TestRegistry.(h|cpp): 新規作成。
+    * TestRunner.(h|cpp): オプション -help、-verbose、-log を追加。
+      (addTest): 引数1つのバージョンを追加。
+      (run, parseArgs, runTests, wait): 大幅に修正。
+      (TestRunner::SimpleListener, TestRunner::Logger): 新規追加。
+
+    * cudebug.h: ファイル行番号の型を unsigned int から int に変更。
+    * custdio.h: 新規作成。FILE 構造体がない環境に対応。
+
+    * cppunit/tests/TestResultTest.(h|cpp): 上記変更に伴い修正。
+    * cppunit/tests/TestCaseTest.(h|cpp)
+      (testAssertMessage, testStringEqualsFailure2): 追加。
+      (testIntEqualsFailure, testLongEqualsFailure, testStringEqualsSuccess)
+      (testStringEqualsFailure1, testStringEqualsFailure3, testFail): 修正。
+    * cppunit/tests/TestRegistryTest.(h|cpp): 新規作成。
+    * cppunit/tests/CppUnitTest.(h|cpp): 新規作成。互換マクロのテスト。
+
+    * コメントを追加。doxygen に対応。
+
+2001-11-14  Ito Yoshiichi  <Ito.Yoshiichi@nifty.com>
+
+    * dgconfig.h: VxWorks 環境の簡易自動検出。
+
+    * LeakChecker-20011114 に対応。VxWorks での不具合解消。
+
+2001-11-12  Ito Yoshiichi  <Ito.Yoshiichi@nifty.com>
+
+    * TestFailure.(h|cpp) (TestFailure): 引数 what の型を const char*
+      から const cu_String& に変更。
+    * TestResult.(h|cpp) (addFailure, addError): 引数 what の型を const
+      char* から const cut_String& に変更。
+
+    * TestCase.(h|cpp) (addFailure, addError): 引数 what の型を const
+      char* から const cu_String& に変更。
+      TestUtility::trimFileName() の使用を中止。TestRunner で同等の処理
+      を行っているため必要なし。
+      (assertEqualsImpl, equals, notEqualsMessage): 引数の型が const
+      cu_String& のバージョンを追加。
+
+    * TestRunner.(h|cpp) (baseName): 削除。TestUtility::trimFileName()
+      を替わりに使用。
+
+    # 方針: 公開部分では const char* を、非公開部分では const cu_String&
+      を使用する。
+    # 方針: ファイル名は最終表示時にトリミングする。
+
+    * TestCaller.h [!cu_NO_TEMPLATES]: DECLARE_TEST_CALLER を追加。
+
+    * cppunit/tests/TestUtilityTest.(h|cpp): 新規作成。
+    * cppunit/tests/TestCaseTest.(h|cpp): (testStringEqualsSuccess)
+      (testStringEqualsFailure1, testStringEqualsFailure2): 追加。
+
+    * cppunit/tests/*.cpp, samples/SampleTest.cpp: DECLARE_TEST_CALLER
+      の前後の #ifdef ～ #endif を削除。
+
+    * LeakChecker のマクロ名変更に対応。
+
+2001-11-06  Ito Yoshiichi  <Ito.Yoshiichi@nifty.com>
+
+    * TestUtility.(h|cpp): 新規作成。
+    * TestCase.cpp (addFailure, addError): ファイル名表示から
+      ディレクトリを削除。
+    * cudebug.h: 同上。
+
+    * LeakChecker 対応(VxWorks は検査不能)。
+
+    * msvc: Release モードの設定。
+
+2001-10-29  Ito Yoshiichi  <Ito.Yoshiichi@nifty.com>
+
+    * cuconfig.h: cu_String, cu_List 関係の記述を変更。
+
+    * cppunit/tests/TestResultTest.(h|cpp): 新規作成。
+    * cppunit/tests/TestCaseTest.(h|cpp),
+      cppunit/tests/TestSuiteTest.(h|cpp),
+      cppunit/tests/TestCallerTest.(h|cpp): TestTest.(h|cpp) を分割。
+    * cppunit/tests/TestDecoratorTest.cpp,
+      cppunit/tests/RepeatedTestTest.cpp,
+      cppunit/tests/TestSetupTest.cpp: 上記変更に伴い修正。
+
+2001-08-24  Ito Yoshiichi  <Ito.Yoshiichi@nifty.com>
+
+    * VxWorks: static library を使用する設定に変更。
+
+2001-08-12  Ito Yoshiichi  <Ito.Yoshiichi@nifty.com>
+
+    * cppunit/TestCase.(h|cpp) (assertEqualsImpl): 引数の順番を変更。
+      (TEST_ASSERT_EQUALS_DOUBLE): 上の変更に伴い修正。
+      (notEqualsMessage): double の出力書式を %f から %g に変更。
+
+    * cppunit/tests/TestTest.(h|cpp): 上記変更のテストを追加。
+
+    * msvc, VxWorks: プロジェクトの構成を変更。
+
+2001-07-29  Ito Yoshiichi  <Ito.Yoshiichi@nifty.com>
+
+    * cppunit/TestCase.(h|cpp) (assertEqualsImpl): 新規追加。
+      (TEST_ASSERT_EQUALS, TEST_ASSERT_EQUALS_DOUBLE): assertEqualsImpl
+      を使って書き換え。テスト失敗時、引数を2度評価する不具合を解消。
+
+    * cppunit/tests/TestTest.(h|cpp): 上記変更のテストを追加。
+
+2001-06-28  Ito Yoshiichi  <Ito.Yoshiichi@nifty.com>
+
+    * cppunit/SimpleList.h: 内部クラス Node、IteratorBase、Iterator、
+      const_Iterator の可視性を public に変更。
+
+    * configure.in: CXXFLAGS=-Wall の設定を gcc の場合に限定。
+
+2001-06-09  Ito Yoshiichi  <Ito.Yoshiichi@nifty.com>
+
+    * cppunit/TestCase.h [!CPPUNIT_COMPATIBLE]: オリジナル CppUnit 互換
+      マクロをコメントアウト。
+
+    * configure.in, Makefile.am: 設定変更。
+
+2001-06-03  Ito Yoshiichi  <Ito.Yoshiichi@nifty.com>
+
+    * cppunit/TestRunner.(h|cpp) (baseName): 新規追加。
+
+    * cppunit/TestDecorator.(h|cpp), cppunit/RepeatedTest.(h|cpp),
+      cppunit/TestSetup.(h|cpp): オリジナル CppUnit のものを修正し追加。
+
+    * cppunit/tests/TestTest.cpp: 等値判定を TEST_ASSERT_EQUALS を用いて
+      書き換え。
+
+    * cppunit/tests/TestDecoratorTest.(h|cpp),
+      cppunit/tests/RepeatedTestTest.(h|cpp),
+      cppunit/tests/TestSetupTest.(h|cpp): 新規作成。
+    * cppunit/tests/AllTests.cpp (main): 上記3テストを追加。
+
+    * configure.in, Makefile.am: 設定変更。
+
+2001-06-01  Ito Yoshiichi  <Ito.Yoshiichi@nifty.com>
+
+    * configure.in: AC_EXEEXT の記述位置を変更。Linux で EXEEXT が .C に
+      なってしまう不具合に対処。Autoconf のバグか?
+
+2001-06-01  Ito Yoshiichi  <Ito.Yoshiichi@nifty.com>
+
+    (旧 Test Framework 2001/03/28 版からの変更点)
+
+    * 公開クラスをディレクトリ cppunit 1つにまとめた。(1.5.2-1.5.4 互換)
+    * ネームスペースを cppunit に変更。(オリジナルは CppUnit)
+
+    * ルートにあった config.h、debug.h を cppunit/ に移動し、ファイル名
+      を cuconfig.h、cudebug.h に変更。また、マクロ名に cu_ のプレフィク
+      スをつけた。
+
+    * test/util/TestDefs.h: cuconfig.h と統合。
+    * test/util/TestMutex.(h|cpp): TestResult の内部クラスに戻した。
+    * test/util/TestStopwatch.(h|cpp): とりあえず廃止。
+    * test/util/pointer_vector.(h|cpp): 廃止。下の SimpleList で置換。
+
+    * cppunit/SimpleList.(h|cpp), cppunit/SimpleString.(h|cpp),
+      cppunit/SimpleAutoPtr.h: 新規作成。
+
+    * cppunit/Test.h (run): 引数 result の型を TestResult& から
+      TestResult* に戻した。
+      (countTestCases): 戻り値の型を size_t から int に戻した。
+      (getName): 新規追加。戻り値の型は const char*。
+
+    * cppunit/TestCase.h (TestCase), cppunit/TestSuite.h (TestSuite):
+      引数 name の型を const string& から const char* に変更した。
+
+    * cppunit/TestCase.h (getName): 名前、戻り値の型を変更。
+      (TEST_ASSERT_EQUALS, TEST_ASSERT_EQUALS_DOUBLE): 新規追加。
+      (equals, notEqualsMessage): 新規追加。
+    * cppunit/TestCase.(h|cpp) (startTest, endTest, runBase):
+      run() を分割。
+
+    * cppunit/TestSuite.h, cppunit/TestResult.h, cppunit/TestRunner.h:
+      コンテナを vector から list に変更。
+
+    * cppunit/TestSuite.h (TestSuite): 引数 capacity を削除。
+
+    * cppunit/TestResult.h: Mutex、AutoMutexLock を内部クラスに戻した。
+      (TestResult): オプション引数 capacity を削除。mutex を追加。
+      (~TestResult): 非 virtual に変更。
+      (addListener): setListeners() を廃止し、替わりに追加。
+      (startTest, endTest): 引数の型を const Test& から Test* に戻した。
+      (addFailure, addError): 引数 what の型を const string& から const
+      char* に変更。
+      (runCount, failureCount, errorCount): それぞれ countTests()、
+      countFailures()、countErrors() から名前を変更。(JUnit 3.x に準拠)
+
+    * cppunit/TestFailure.h (TestFailure): 引数 what の型を const string&
+      から const char* に変更。
+
+    * cppunit/TestRunner.h (TestRunner): 引数 out、capacity を削除。
+      (run): 戻り値の型を void から int に変更。
+
+    * cppunit/tests/SimpleListTest.(h|cpp),
+      cppunit/tests/SimpleStringTest.(h|cpp),
+      cppunit/tests/SimpleAutoPtrTest.(h|cpp): 新規作成。
+    * cppunit/tests/TestTest.(h|cpp): テスト追加。
+
+    * samples/SampleTest.cpp: ComplexTest.(h|cpp) から修正。
+
+    * Autotools (Autoconf/Automake) を採用。ただし、これで環境の差異を全
+      て吸収できたわけではありません(^^;)。

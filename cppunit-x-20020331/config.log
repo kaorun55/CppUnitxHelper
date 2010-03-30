@@ -1,0 +1,60 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:563: checking for a BSD compatible install
+configure:616: checking whether build environment is sane
+configure:673: checking whether make sets ${MAKE}
+configure:719: checking for working aclocal
+configure:732: checking for working autoconf
+configure:745: checking for working automake
+configure:758: checking for working autoheader
+configure:771: checking for working makeinfo
+configure:786: checking whether to enable maintainer-specific portions of Makefiles
+configure:812: checking for gcc
+configure:925: checking whether the C compiler (gcc  ) works
+configure:941: gcc -o conftest    conftest.c  1>&5
+configure:967: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:972: checking whether we are using GNU C
+configure:981: gcc -E conftest.c
+configure:1000: checking whether gcc accepts -g
+configure:1036: checking for c++
+configure:1068: checking whether the C++ compiler (c++  ) works
+configure:1084: c++ -o conftest    conftest.C  1>&5
+configure:1110: checking whether the C++ compiler (c++  ) is a cross-compiler
+configure:1115: checking whether we are using GNU C++
+configure:1124: c++ -E conftest.C
+configure:1143: checking whether c++ accepts -g
+configure:1177: checking for ranlib
+configure:1216: checking for a BSD compatible install
+configure:1270: checking for Cygwin environment
+configure:1286: gcc -c -g -O2  conftest.c 1>&5
+configure: In function 'main':
+configure:1282: error: '__CYGWIN32__' undeclared (first use in this function)
+configure:1282: error: (Each undeclared identifier is reported only once
+configure:1282: error: for each function it appears in.)
+configure: failed program was:
+#line 1275 "configure"
+#include "confdefs.h"
+
+int main() {
+
+#ifndef __CYGWIN__
+#define __CYGWIN__ __CYGWIN32__
+#endif
+return __CYGWIN__;
+; return 0; }
+configure:1303: checking for mingw32 environment
+configure:1315: gcc -c -g -O2  conftest.c 1>&5
+configure: In function 'main':
+configure:1311: error: '__MINGW32__' undeclared (first use in this function)
+configure:1311: error: (Each undeclared identifier is reported only once
+configure:1311: error: for each function it appears in.)
+configure: failed program was:
+#line 1308 "configure"
+#include "confdefs.h"
+
+int main() {
+return __MINGW32__;
+; return 0; }
+configure:1334: checking for executable suffix
+configure:1344: gcc -o conftest -g -O2   conftest.c  1>&5

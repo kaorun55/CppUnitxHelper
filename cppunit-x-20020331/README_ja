@@ -1,0 +1,135 @@
+==============================================
+  CppUnit-x - CppUnit Like Test Framework
+==============================================
+
+1. 概要
+
+　XP の C++ 単体テストフレームワーク CppUnit を、組み込み分野など比較的
+プアな環境でも使用できるように修正したものです。最新版は次の場所からダウ
+ンロードできます。
+
+    http://member.nifty.ne.jp/glad/cpp/test/
+
+　ベースとなっているオリジナルの CppUnit のバージョンは 1.5.x です。以下
+の URL からたどることができます。
+
+    http://sourceforge.net/projects/cppunit
+    http://www.xprogramming.com/software.htm
+
+
+2. ファイル構成
+
+  - README(_ja)         このファイル
+  - ChangeLog           更新履歴
+  - COPYING             GNU LESSER GENERAL PUBLIC LICENSE Ver.2.1
+  - ...                 (省略)
+  - cppunit/            テストフレームワークソースコード
+  - cppunit/tests/      テストフレームワーク自身のテスト
+  - samples/            サンプルプログラム
+  - misc/               試行中のソースコードなど
+  - config/             Autotools 関係ファイル
+  - msvc/               Microsoft Visual C++ 6.0 プロジェクトファイル
+  - VxWorks/            Tornado Ver.2.0 プロジェクトファイル
+
+
+3. 動作環境
+
+　次の処理系で動作確認をしています。
+
+  * Microsoft Visual C++ 6.0
+  * Borland C++ 5.5
+  * Cygwin 1.1 (gcc-2.95)
+  * Vine Linux 2.0 CR (egcs-2.91)
+  * Debian GNU/Linux 2.2 (gcc-2.95)
+  * LynxOS Ver.2.3 (gcc-2.6)
+  * Tornado Ver.2.0 SIMNT_gnu
+
+
+4. 導入方法
+
+  (1) UNIX 系
+
+    * 必要に応じて cppunit/cuconfig.h を編集してください。
+    * あとは次のコマンドでコンパイルできます(たぶん ^^;)。
+
+        ./configure
+        make
+
+    * コンパイルできたら、サンプルプログラムを実行してみてください。
+
+        samples/SampleTest
+        cppunit/tests/AllTests (make check でも実行可能)
+
+    * 次のコマンドで /usr/local 以下へインストールできます。
+
+        make install
+
+  (2) Microsoft Visual C++ 6.0
+
+    * ワークスペース msvc/cppunit.dsw を開いて、各プロジェクトをビルドし
+      てください。
+
+    * SampleTest、cppunit_tests が実行可能なプロジェクトです。
+
+  (3) Borland C++ 5.5
+
+    * ビルド環境をきちんと用意してありませんが、とりあえず次のように実行
+      すると動きます。
+
+        cd misc
+        make4bcc
+        SampleTest
+        AllTests
+
+  (4) Tornado Ver.2.0 SIMNT_gnu
+
+    * ワークスペース VxWorks/cppunit.wsp を開いて、まず最初に cppunit.a
+      をビルドしてください。続いて各プロジェクトをビルドします。
+
+    * SampleTest、cppunit_tests が実行可能なプロジェクトです。
+
+
+5. 使用方法
+
+  * サンプルプログラム samples/SampleTest.cpp を参考にしてください。
+
+  * CppUnit 自身のテスト cppunit/tests/* も参考になると思います。
+
+
+6. オリジナル CppUnit 1.5.x との主な相違点
+
+  * テンプレート、例外、実行時型識別(RTTI)、標準ライブラリ等が使用できな
+    い環境にも対応した。具体的には以下の通り。
+
+  * SimpleList.(h|cpp), SimpleString.(h|cpp), SimpleAutoPtr.h:
+    C++ 標準ライブラリが使えない環境用に簡易版を作成した。
+
+  * Test.h (getName), TestCase.h (TestCase), TestSuite.h (TestSuite):
+    引数、戻り値の型を string から const char* に変更した。
+
+  * TestCase.h (TEST_ASSERT*): テスト用のマクロ名を全て大文字にした。
+    (TEST_CASE*): TestCaller を使わずにすむ仕組みを追加した。
+  * TestCase.(h|cpp) (TEST_ASSERT*, run): C++ 例外を使わずにテストの判定
+    を行うように変更した。
+
+  * TestSuite.h, TestResult.h, TestRunner.h: メモリの再確保を抑制するた
+    め、コンテナを vector から list に変更した。
+
+  * TestCaller.h: テンプレートが使えない環境に対応した。TEST_CALLER マク
+    ロを定義して TestCaller の生成を簡単にした。継承関係を変更した。
+
+  * TestResult.h, TestListener.h: TestResult を継承して、テキスト版 Test-
+    Result を作るのではなく、JUnit のように TestListener を TestResult
+    に登録する形にした。
+
+  * TestFailure.h: Exception クラスを保有するのではなく、テストの各詳細
+    情報 (message、file、line) を個別に属性として持つ形にした。
+
+  * TestRunner.(h|cpp): TestRunner はテキスト版のみ。
+
+
+----------------------------------------
+Ito Yoshiichi (伊藤 喜一)
+http://member.nifty.ne.jp/glad/
+E-mail: Ito.Yoshiichi@nifty.com
+    Ito_Yoshiichi@tk-bay.ogis-ri.co.jp

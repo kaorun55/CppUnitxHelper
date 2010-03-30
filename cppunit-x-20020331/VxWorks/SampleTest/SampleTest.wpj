@@ -1,0 +1,177 @@
+Document file - DO NOT EDIT
+
+<BEGIN> BUILD_RULE_SampleTest.out
+
+<END>
+
+<BEGIN> BUILD_RULE_archive
+
+<END>
+
+<BEGIN> BUILD_RULE_objects
+
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_BUILDRULE
+SampleTest.out
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_AR
+arsimpc
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_ARCHIVE
+$(PRJ_DIR)/SIMNTgnu/SampleTest.a
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_AS
+ccsimpc
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_CC
+ccsimpc
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_CFLAGS
+-U__WINNT \
+	-UWIN32 \
+	-U__WINNT__ \
+	-UWINNT \
+	-U__MINGW32__ \
+	-U_WIN32 \
+	-U__WIN32 \
+	-U__WIN32__ \
+	-U__WIN32 \
+	-mpentium \
+	-ansi \
+	-nostdinc \
+	-g \
+	-nostdlib \
+	-fno-builtin \
+	-fno-defer-pop \
+	-Wall \
+	-DRW_MULTI_THREAD \
+	-D_REENTRANT \
+	-I$(WIND_BASE)/target/h \
+	-DCPU=SIMNT \
+	-I$(PRJ_DIR)/../..
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_CFLAGS_AS
+-mpentium \
+	-ansi \
+	-nostdinc \
+	-g \
+	-nostdlib \
+	-fno-builtin \
+	-fno-defer-pop \
+	-P \
+	-x \
+	assembler-with-cpp \
+	-I. \
+	-I$(WIND_BASE)/target/h \
+	-DCPU=SIMNT
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_CPP
+ccsimpc -E -P -xc
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_LD
+ldsimpc
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_LDDEPS
+
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_LDFLAGS
+--subsystem=windows
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_LD_PARTIAL_FLAGS
+-r
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_NM
+nmsimpc -g
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_OPTION_DEFINE_MACRO
+-D
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_OPTION_INCLUDE_DIR
+-I
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_POST_BUILD_RULE
+
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_PRJ_LIBS
+$(PRJ_DIR)/../cppunit/SIMNTgnu/cppunit.a
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_SIZE
+sizesimpc
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_RO_DEPEND_PATH
+{$(WIND_BASE)/target/h/} \
+	{$(WIND_BASE)/target/src/} \
+	{$(WIND_BASE)/target/config/}
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_TC
+::tc_SIMNTgnu
+<END>
+
+<BEGIN> BUILD__CURRENT
+SIMNTgnu
+<END>
+
+<BEGIN> BUILD__LIST
+SIMNTgnu
+<END>
+
+<BEGIN> CORE_INFO_TYPE
+::prj_vxApp
+<END>
+
+<BEGIN> CORE_INFO_VERSION
+2.0
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../samples/SampleTest.cpp_dependDone
+TRUE
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../samples/SampleTest.cpp_dependencies
+$(PRJ_DIR)/../../cppunit/cudebug.h \
+	$(PRJ_DIR)/../../cppunit/cuconfig.h \
+	$(PRJ_DIR)/../../cppunit/TestUtility.h \
+	$(PRJ_DIR)/../../cppunit/TestCase.h \
+	$(PRJ_DIR)/../../cppunit/Test.h \
+	$(PRJ_DIR)/../../cppunit/TestSuite.h \
+	$(PRJ_DIR)/../../cppunit/TestCaller.h \
+	$(PRJ_DIR)/../../cppunit/TestRunner.h \
+	$(PRJ_DIR)/../../cppunit/TestListener.h
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../samples/SampleTest.cpp_objects
+SampleTest.o
+<END>
+
+<BEGIN> FILE_$(PRJ_DIR)/../../samples/SampleTest.cpp_tool
+C/C++ compiler
+<END>
+
+<BEGIN> PROJECT_FILES
+$(PRJ_DIR)/../../samples/SampleTest.cpp
+<END>
+
+<BEGIN> userComments
+<Enter description here>
+<END>
+
