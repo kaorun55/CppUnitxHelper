@@ -5,7 +5,7 @@
 program = UnitTest
 
 # 定義済マクロの再定義
-CC = gcc
+CC = g++
 CFLAGS = -g -Wall
 INCLUDE = -Icppunit-x-20020331
 
