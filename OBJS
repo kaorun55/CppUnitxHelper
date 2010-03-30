@@ -1,0 +1,1 @@
+objs = Counter.o Quiz.o Tester.o

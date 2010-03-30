@@ -1,8 +1,25 @@
-OBJS = Counter.obj Quiz.obj
-LIBS = cppunit.lib
-INC  = D:\_work\etc\cppunit-x-20020331
+# Makefile
 
-test : $(OBJS)
+# プログラム名とオブジェクトファイル名
+-include OBJS
+program = UnitTest
+
+# 定義済マクロの再定義
+CC = gcc
+CFLAGS = -g -Wall
+INCLUDE = -Icppunit-x-20020331
+
+# サフィックスルール適用対象の拡張子の定義
+.SUFFIXES: .cpp .o
+
+# プライマリターゲット
+$(program): $(objs)
+	echo $^
 	ruby TestRunnerFactory.rb
-	cl -GX -I$(INC) Tester.cpp $(LIBS) $(OBJS)
-	Tester.exe
+	$(CC) -o $(program) libcppunit.a $^
+
+# サフィックスルール
+.cpp.o:
+	echo $<
+	$(CC) $(CFLAGS) $(INCLUDE) -c $<
+

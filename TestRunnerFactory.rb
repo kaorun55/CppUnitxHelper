@@ -20,6 +20,7 @@ class TestRunnerFactory
   
   def makeRunner
     tester = File.new( "Tester.cpp", "w" )
+	tester.puts "#define CPPUNIT_COMPATIBLE"
     tester.puts "#include <cppunit/TestCase.h>"
     tester.puts "#include <cppunit/TestSuite.h>"
     tester.puts "#include <cppunit/TestRunner.h>"
